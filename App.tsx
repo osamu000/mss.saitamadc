@@ -10,10 +10,11 @@ import {
   User, 
   FileText, 
   ChevronDown,
-  Lock
+  Lock,
+  Github
 } from 'lucide-react';
 import { DailyReport, WorkItem, Category, WorkReportEntry } from './types';
-import { WORKERS, CATEGORIES, STORAGE_KEY } from './constants';
+import { WORKERS, CATEGORIES, STORAGE_KEY, GITHUB_REPO_URL } from './constants';
 import { calculateDuration, sendToGoogleSheets } from './services/reportService';
 import TimeSummaryBar from './components/TimeSummaryBar';
 
@@ -139,7 +140,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-40 text-slate-900">
+    <div className="min-h-screen bg-slate-50 pb-20 text-slate-900">
       <TimeSummaryBar totalHours={totalHours} onAddRow={addItem} />
 
       <div className="max-w-6xl mx-auto px-4 pt-28 space-y-6">
@@ -333,6 +334,21 @@ const App: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* フッターリンク */}
+        <footer className="pt-12 pb-24 flex flex-col items-center justify-center gap-4 text-slate-400">
+          <div className="h-px w-20 bg-slate-200"></div>
+          <a 
+            href={GITHUB_REPO_URL} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-indigo-600 transition-colors text-xs font-bold"
+          >
+            <Github className="w-4 h-4" />
+            ソースコードを表示 (GitHub)
+          </a>
+          <p className="text-[10px] font-medium tracking-widest uppercase">© 2024 Daily Report System</p>
+        </footer>
       </div>
 
       <div className="fixed bottom-0 left-0 right-0 p-6 bg-white/90 backdrop-blur-xl border-t border-slate-200 z-40">

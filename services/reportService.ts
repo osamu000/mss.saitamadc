@@ -23,7 +23,8 @@ export const loadDraftsFromLocal = (): DailyReport[] => {
 };
 
 export const sendToGoogleSheets = async (report: WorkReportEntry): Promise<boolean> => {
-  if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL === 'ここにURLを貼り付け') {
+  // Fix: Corrected the placeholder string check to match the value defined in constants.ts
+  if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL === 'ここにGASのデプロイURLを貼り付けてください') {
     console.warn('Google Sheets URL not configured. Simulating success.');
     return new Promise((resolve) => setTimeout(() => resolve(true), 1500));
   }

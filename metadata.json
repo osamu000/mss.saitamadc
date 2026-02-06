@@ -1,5 +1,7 @@
 {
   "name": "作業日報",
-  "description": "",
-  "requestFramePermissions": []
+  "description": "現場での作業を記録し、スプレッドシートへ送信するアプリ",
+  "requestFramePermissions": [
+    "camera"
+  ]
 }
