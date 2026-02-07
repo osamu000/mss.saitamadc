@@ -126,7 +126,7 @@
         const STORAGE_KEY = 'daily_report_v10_title';
         const SETTINGS_KEY = 'daily_report_settings_v10';
         
-        const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz_GyxkTE1WTmayToSKJZuVeoFvQXJmT332M4m2WM5PXmMD_IAV_rYkRw6lw7fNIdt86w/exec'; 
+        const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw-fKgo5_p3C7AsqG3n0FEYQrCo-KKSqYDXdnajHiOrbxwViVqvtpnLfc0_4au6iFiUmw/exec'; 
 
         const calculateDuration = (start, end) => {
             if (!start || !end) return '0.0';
@@ -247,7 +247,7 @@
                 setIsSubmitting(true);
                 try {
                     const payload = { reportTitle, workDate, workerName, items, remarks };
-                    await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+                    await fetch('https://script.google.com/macros/s/AKfycbw-fKgo5_p3C7AsqG3n0FEYQrCo-KKSqYDXdnajHiOrbxwViVqvtpnLfc0_4au6iFiUmw/exec', {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: { 'Content-Type': 'application/json' },
