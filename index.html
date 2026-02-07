@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>現場作業日報 Pro - Custom</title>
+    <title>作業日報 Pro - Custom</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -235,7 +235,7 @@
             };
 
             const handleSend = async () => {
-                if (!reportTitle.trim()) return alert('報告の題名を入力してください');
+                if (!reportTitle.trim()) return alert('日報の題名を入力してください');
                 if (!workerName.trim()) return alert('作業者名を入力してください');
                 if (items.some(i => !i.content.trim())) return alert('作業内容を入力してください');
                 
@@ -344,12 +344,12 @@
                                     </div>
                                 </div>
                                 
-                                {/* 中央タイトル部分（文字サイズ拡大） */}
+                                {/* 中央タイトル部分（作業日報に変更） */}
                                 <div className="hidden sm:block">
-                                    <h1 className="text-2xl font-black text-slate-800 tracking-widest uppercase">作業報告</h1>
+                                    <h1 className="text-2xl font-black text-slate-800 tracking-widest uppercase">作業日報</h1>
                                 </div>
                                 <div className="sm:hidden text-xl font-black text-slate-700 tracking-tighter">
-                                    作業報告
+                                    作業日報
                                 </div>
 
                                 <div className="flex gap-2">
@@ -370,7 +370,7 @@
                     <main className="max-w-xl mx-auto px-3 pt-24 space-y-4 fade-in">
                         <section className="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 space-y-4">
                             <div className="space-y-1.5">
-                                <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><Edit3 className="w-3.5 h-3.5 text-indigo-500"/> 報告の題名</label>
+                                <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><Edit3 className="w-3.5 h-3.5 text-indigo-500"/> 日報の題名</label>
                                 <input type="text" value={reportTitle} onChange={e => setReportTitle(e.target.value)} placeholder="例：〇〇現場 作業日報" className="input-base !text-[16px] !py-3 !font-black" />
                             </div>
                             <div className="grid grid-cols-2 gap-4">
