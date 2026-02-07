@@ -241,13 +241,13 @@
                 
                 const isConfigured = GOOGLE_SHEETS_WEB_APP_URL && GOOGLE_SHEETS_WEB_APP_URL.startsWith('http');
                 if (!isConfigured) {
-                    return alert('URLが設定されていません。');
+                    return alert('https://script.google.com/macros/s/AKfycbw-fKgo5_p3C7AsqG3n0FEYQrCo-KKSqYDXdnajHiOrbxwViVqvtpnLfc0_4au6iFiUmw/exec');
                 }
 
                 setIsSubmitting(true);
                 try {
                     const payload = { reportTitle, workDate, workerName, items, remarks };
-                    await fetch('https://script.google.com/macros/s/AKfycbw-fKgo5_p3C7AsqG3n0FEYQrCo-KKSqYDXdnajHiOrbxwViVqvtpnLfc0_4au6iFiUmw/exec', {
+                    await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: { 'Content-Type': 'application/json' },
