@@ -126,7 +126,7 @@
         const STORAGE_KEY = 'daily_report_v10_title';
         const SETTINGS_KEY = 'daily_report_settings_v10';
         
-        const GOOGLE_SHEETS_WEB_APP_URL = ''; 
+        const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyqAq-28_bFMxiBGHmbfUVIbBT4o0-0wneKznuFUqaeYK2NReMhl-_3QioWVglJ9TgaCg/exec'; 
 
         const calculateDuration = (start, end) => {
             if (!start || !end) return '0.0';
@@ -241,7 +241,7 @@
                 
                 const isConfigured = GOOGLE_SHEETS_WEB_APP_URL && GOOGLE_SHEETS_WEB_APP_URL.startsWith('http');
                 if (!isConfigured) {
-                    return alert('https://script.google.com/macros/s/AKfycbyqAq-28_bFMxiBGHmbfUVIbBT4o0-0wneKznuFUqaeYK2NReMhl-_3QioWVglJ9TgaCg/exec');
+                    return alert('URLが設定されていません。');
                 }
 
                 setIsSubmitting(true);
